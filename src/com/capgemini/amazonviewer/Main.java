@@ -24,7 +24,7 @@ public class Main {
 		int exit = 0;
 		do {
 			
-			System.out.println("BIENVENIDOS AMAZON VIEWER");
+			System.out.println("BIENVENIDOS AMAZON VIEWER OK");
 			System.out.println("");
 			System.out.println("Selecciona el número de la opción deseada");
 			System.out.println("1. Movies");
