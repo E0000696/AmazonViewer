@@ -64,6 +64,10 @@ public class Film {
 		this.viewed = viewed;
 	}
 	
+	public boolean getIstViewed() {
+		return viewed;
+	}
+	
 	
 	
 
