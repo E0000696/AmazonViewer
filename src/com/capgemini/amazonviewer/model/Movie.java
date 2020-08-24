@@ -1,6 +1,5 @@
 package com.capgemini.amazonviewer.model;
 
-
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -15,11 +14,6 @@ public class Movie extends Film implements IVisualizable {
 		setYear(year);
 	}
 
-	public void showData() {
-		//System.out.println("Title:" + title);
-		//System.out.println("Genre:" + genre);
-		//System.out.println("Year:" + year);
-	}
 	
 	public int getId() {
 		return id;
@@ -71,6 +65,24 @@ public class Movie extends Film implements IVisualizable {
 		}
 		
 		return movies;
+	}
+
+
+	@Override
+	public void view() {
+		// TODO Auto-generated method stub
+		setViewed(true);
+		Date dateI = startToSee(new Date());
+		
+		for (int i = 0; i < 100000; i++) {
+			System.out.println("..........");
+		}
+		
+		//Termine de verla
+		stopToSee(dateI, new Date());
+		System.out.println();
+		System.out.println("Viste: " + toString());
+		System.out.println("Por: " + getTimeViewed() + " milisegundos");
 	}
 	
 }

@@ -1,7 +1,6 @@
 package com.capgemini.amazonviewer.model;
 
-
-public class Film {
+public abstract class Film {
 	
 	private String title;
 	private String genre;
@@ -53,22 +52,31 @@ public class Film {
 	public String isViewed() {
 		String visto = "";
 		if(viewed == true) {
-			visto = "Sí";
+			visto = "SÃ­";
 		}else {
 			visto = "No";
 		}
 		
 		return visto;
 	}
+	
+	public boolean getIsViewed() {
+		return viewed;
+	}
 	public void setViewed(boolean viewed) {
 		this.viewed = viewed;
 	}
 	
-	public boolean getIstViewed() {
-		return viewed;
-	}
 	
-	
-	
+	public abstract void view();
 
 }
+
+
+
+
+
+
+
+
+

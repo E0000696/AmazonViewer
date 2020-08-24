@@ -1,5 +1,6 @@
 package com.capgemini.amazonviewer.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Book extends Publication implements IVisualizable {
@@ -31,13 +32,24 @@ public class Book extends Publication implements IVisualizable {
 	}
 
 
-	public boolean isReaded() {
-		return readed;
+	public String isReaded() {
+		String leido = "";
+		if(readed == true) {
+			leido = "Sí";
+		}else {
+			leido = "No";
+		}
+		
+		return leido;
 	}
 
 
 	public void setReaded(boolean readed) {
 		this.readed = readed;
+	}
+	
+	public boolean getIsReaded() {
+		return readed;
 	}
 
 
@@ -59,7 +71,7 @@ public class Book extends Publication implements IVisualizable {
 							"\n Edition Date: " + getEdititionDate() +
 							"\n Authors: ";
 		for (int i = 0; i < getAuthors().length; i++) {
-			detailBook += "\t" + getAuthors()[i];
+			detailBook += "\t" + getAuthors()[i] + " ";
 		}
 		return  detailBook;
 	}
@@ -75,11 +87,39 @@ public class Book extends Publication implements IVisualizable {
 	@Override
 	public void stopToSee(Date dateI, Date dateF) {
 		// TODO Auto-generated method stub
-		if (dateF.getSeconds() > dateI.getSeconds()) {
-			setTimeReaded(dateF.getSeconds() - dateI.getSeconds());
+		if (dateF.getTime() > dateI.getTime()) {
+			setTimeReaded((int)(dateF.getTime() - dateI.getTime()));
 		}else {
 			setTimeReaded(0);
 		}
+	}
+	
+	public void view() {
+		setReaded(true);
+		Date dateI = startToSee(new Date());
+		
+		for (int i = 0; i < 100000; i++) {
+			System.out.println("..........");
+		}
+		
+		//Termine de verla
+		stopToSee(dateI, new Date());
+		System.out.println();
+		System.out.println("Leíste: " + toString());
+		System.out.println("Por: " + getTimeReaded() + " milisegundos");
+	}
+	
+	public static ArrayList<Book> makeBookList() {
+		ArrayList<Book> books = new ArrayList();
+		String[] authors = new String[3];
+		for (int i = 0; i < 3; i++) {
+			authors[i] = "author "+i;
+		}
+		for (int i = 1; i <= 5; i++) {
+			books.add(new Book("Book " + i, new Date(), "editorial " + i, authors));
+		}
+		
+		return books;
 	}
 	
 }
