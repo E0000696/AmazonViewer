@@ -3,6 +3,14 @@ package com.capgemini.amazonviewer.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+
+/**
+ * 
+ * Hereda de {@link Film}
+ * Implementa de {@link IVisualizable}
+ * 
+ * */
+
 public class Movie extends Film implements IVisualizable {
 	
 	private int id;
@@ -38,12 +46,18 @@ public class Movie extends Film implements IVisualizable {
 				"\n Duration: " + getDuration();
 	}
 
+	/**
+	 * {@inheritDoc }
+	 * */	
 	@Override
 	public Date startToSee(Date dateI) {
 		// TODO Auto-generated method stub
 		return dateI;
 	}
 
+	/**
+	 * {@inheritDoc }
+	 * */	
 	@Override
 	public void stopToSee(Date dateI, Date dateF) {
 		// TODO Auto-generated method stub
@@ -68,6 +82,9 @@ public class Movie extends Film implements IVisualizable {
 	}
 
 
+	/**
+	 * {@inheritDoc } 
+	 * */	
 	@Override
 	public void view() {
 		// TODO Auto-generated method stub

@@ -14,11 +14,25 @@ import com.capgemini.amazonviewer.model.Serie;
 import com.capgemini.makereport.Report;
 import com.capgemini.util.AmazonUtil;
 
+
+/**
+ * <h1> Amazon Viewer </h1>
+ * Amazon viewer es un programa que permite visualizar series, 
+ * movies etc. Te permite generar reportes y con fecha.
+ * <p>
+ * Existen algunas reglas para poder utilizarlo
+ * 
+ * @author JORIVERA
+ * @version 1.0
+ * @since 2020
+ * 
+ * 
+ * */
+
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+	
 		showMenu();
 
 	}
@@ -29,7 +43,7 @@ public class Main {
 			
 			System.out.println("BIENVENIDOS AMAZON VIEWER");
 			System.out.println("");
-			System.out.println("Selecciona el número de la opción deseada");
+			System.out.println("Selecciona el número de la opcion deseada");
 			System.out.println("1. Movies");
 			System.out.println("2. Series");
 			System.out.println("3. Books");
@@ -70,7 +84,7 @@ public class Main {
 	
 				default:
 					System.out.println();
-					System.out.println("....¡¡Selecciona una opción!!....");
+					System.out.println("....�Selecciona una opcion!!....");
 					System.out.println();
 					exit = 1;
 					break;
@@ -89,7 +103,7 @@ public class Main {
 			System.out.println(":: MOVIES ::");
 			System.out.println();
 			
-			for (int i = 0; i < movies.size(); i++) { //1. Movie 1
+			for (int i = 0; i < movies.size();++i) { //1. Movie 1
 				System.out.println(i+1 + ". " + movies.get(i).getTitle() + " Visto: " + movies.get(i).isViewed());
 			}
 			
