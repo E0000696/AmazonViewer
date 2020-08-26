@@ -3,10 +3,16 @@ package com.capgemini.amazonviewer;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 import com.capgemini.amazonviewer.model.Book;
 import com.capgemini.amazonviewer.model.Chapter;
+import com.capgemini.amazonviewer.model.Day;
 import com.capgemini.amazonviewer.model.Film;
 import com.capgemini.amazonviewer.model.Magazine;
 import com.capgemini.amazonviewer.model.Movie;
@@ -32,7 +38,8 @@ import com.capgemini.util.AmazonUtil;
 public class Main {
 
 	public static void main(String[] args) {
-	
+
+		
 		showMenu();
 
 	}
