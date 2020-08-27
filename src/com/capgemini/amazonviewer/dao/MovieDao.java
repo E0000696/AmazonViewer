@@ -28,7 +28,10 @@ public interface MovieDao extends IDBConnection{
 						Integer.valueOf(rs.getString(TMOVIE_DURATION)), Short.valueOf(rs.getString(TMOVIE_YEAR)));
 				
 				movie.setId(Integer.valueOf(rs.getString(TMOVIE_ID)));
-				
+				movie.setViewed(getMovieViewed(
+						preparedStatement, 
+						connection, 
+						Integer.valueOf(rs.getString(TMOVIE_ID))));
 				movies.add(movie);
 			}
 			
@@ -38,8 +41,32 @@ public interface MovieDao extends IDBConnection{
 		return movies;
 	}
 	
-	private boolean getMovieViewed() {
-		return false;
+	private boolean getMovieViewed(PreparedStatement prepareStatement, Connection connection, int id_movie) {
+		boolean viewed  = false;
+		String query ="SELECT * FROM "+TVIEWED+
+				" WHERE "+TVIEWED_IDMATERIAL + " = "+" ? " +
+				" AND "+TVIEWED_IDELEMENT + " = "+" ? " +
+				" AND "+TVIEWED_IDUSUARIO + " = "+" ? " ;
+		
+		ResultSet rs = null;
+		try {
+			prepareStatement = connection.prepareStatement(query);
+			prepareStatement.setInt(1, ID_TMATERIALS[0]);
+			prepareStatement.setInt(2, id_movie);
+			prepareStatement.setInt(3, TUSER_IDUSUARIO);
+			
+			
+			
+			rs = prepareStatement.executeQuery();
+					
+			viewed = rs.next();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return viewed;
 	} 
 	
 }
