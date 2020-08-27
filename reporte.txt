@@ -1,7 +1,21 @@
 
  :: MOVIE ::
- Title: Movie 1
- Genero: Genero 1
+ Title: Coco
+ Genero: Animación
+ Year: 2017
+ Creator: Pixart
+ Duration: 120
+
+ :: MOVIE ::
+ Title: Amélie
+ Genero: Romance
+ Year: 2001
+ Creator: Jean-Pierre Jeunet
+ Duration: 123
+
+ :: MOVIE ::
+ Title: Final Fantasy
+ Genero: accion
  Year: 2018
- Creator: Creador 1
- Duration: 121
+ Creator: Pixar
+ Duration: 190
