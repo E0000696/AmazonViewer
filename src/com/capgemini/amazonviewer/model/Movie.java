@@ -61,7 +61,9 @@ public class Movie extends Film implements IVisualizable , MovieDao{
 	@Override
 	public Date startToSee(Date dateI) {
 		// TODO Auto-generated method stub
+		System.out.println("imprime la fecha para debug");
 		return dateI;
+
 	}
 
 	/**
