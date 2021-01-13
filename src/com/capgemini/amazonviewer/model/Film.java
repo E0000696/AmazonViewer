@@ -22,6 +22,7 @@ public abstract class Film {
 	private int duration;
 	private short year;
 	private boolean viewed;
+
 	
 	
 	public Film() {

@@ -8,6 +8,10 @@ public class Publication {
 	private Date edititionDate;
 	private String editorial;
 	private String[] authors;
+	/**
+	 * cambio agregado por italia
+	 */
+	private String newVariable;
 	
 	
 	public Publication(String title, Date edititionDate, String editorial) {
