@@ -31,7 +31,7 @@ import com.capgemini.util.AmazonUtil;
  * <p>
  * Existen algunas reglas para poder utilizarlo
  * 
- * @author JORIVERA
+ * @author JORIVERA and their friends
  * @version 1.0
  * @since 2020
  * 
