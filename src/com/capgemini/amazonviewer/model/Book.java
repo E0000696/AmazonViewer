@@ -5,8 +5,13 @@ import java.util.Date;
 
 import com.capgemini.util.AmazonUtil;
 
+/**
+ * Esta clase es la que administra los books
+ */
+
 public class Book extends Publication implements IVisualizable {
 	private int id;
+	private int sequence;
 	private String isbn;
 	private boolean readed;
 	private int timeReaded;
